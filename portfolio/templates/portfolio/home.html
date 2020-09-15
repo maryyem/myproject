@@ -1,0 +1,15 @@
+this is the new home <br>
+{% load static %}
+<a href="{% static 'portfolio/CV Meryem ZRIBI.docx' %}"> resume </a>
+<img src="{% static 'portfolio/meryem.jpg' %}" >
+
+{% for project in projects %}
+<h1>{{ project.title }}</h1>
+<h1>{{ project.description }}</h1>
+<img src="{{ project.image.url }}"  >
+{% if project.url %}
+<br> <a href="{{project.url}}">Link</a>
+{% endif %}
+
+
+{% endfor %}
